@@ -13,7 +13,7 @@ Sub ResizeImageHeightForVBA()
     On Error Resume Next ' エラーが発生しても次の画像に進むように設定
     For Each iShape In ActiveDocument.InlineShapes
         With iShape
-            .LockAspectRatio = msoFalse ' アスペクト比のロックを解除
+            .LockAspectRatio = msoTrue
             .Height = newHeightPoints
             If Err.Number <> 0 Then
                 MsgBox "エラーが発生しました。画像のサイズ変更に失敗しました。" & vbCrLf & "エラー番号: " & Err.Number & vbCrLf & "エラーメッセージ: " & Err.Description, vbExclamation
